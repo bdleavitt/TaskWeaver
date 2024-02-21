@@ -29,7 +29,18 @@ from taskweaver.memory.type_vars import RoleName
 from taskweaver.module.event_emitter import PostEventType, RoundEventType, SessionEventHandlerBase
 from taskweaver.session.session import Session
 
-project_path = os.path.join(repo_path, "project")
+## Import Environment Variables that will be helpful for executing functions
+from dotenv import load_dotenv
+
+load_dotenv()
+project_directory = os.getenv('PROJECT_DIRECTORY_NAME', 'project')
+
+project_path = os.path.join(repo_path, project_directory)
+os.environ["PROJECT_DIRECTORY_PATH"] = project_path
+
+plugin_dir_path = os.path.join(project_path, "plugins")
+sys.path.append(plugin_dir_path)
+
 app = TaskWeaverApp(app_dir=project_path, use_local_uri=True)
 app_session_dict: Dict[str, Session] = {}
 

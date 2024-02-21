@@ -1,0 +1,19 @@
+name: util_convert_plugin_code_to_yaml  
+enabled: true  
+required: false  
+plugin_only: true  
+description: >-  
+  This plugin takes a Python class written for use as a Taskweaver plugin and generates the corresponding YAML file containing the description and other metadata.  
+examples: |-  
+  yaml_output = util_convert_plugin_code_to_yaml(python_code)  
+   
+parameters:  
+  - name: python_code  
+    type: str  
+    required: true  
+    description: A string containing the Python code for a Taskweaver plugin.  
+   
+returns:  
+  - name: yaml_output  
+    type: str  
+    description: The YAML representation of the Taskweaver plugin based on the provided Python code.

@@ -1,0 +1,15 @@
+name: util_convert_python_to_plugin  
+enabled: true  
+required: false  
+plugin_only: true  
+description: >-  
+  Takes a block of python code represented as a string, and then converts it to a Taskweaver plugin-compatible, callable class using OpenAI
+parameters:  
+  - name: python_code  
+    type: str
+    required: true  
+    description: The Python function code to convert into a Taskweaver plugin.  
+returns:  
+  - name: plugin_code  
+    type: str  
+    description: A string the contains the generated Taskweaver plugin python code.
