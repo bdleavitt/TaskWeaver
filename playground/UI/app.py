@@ -32,8 +32,9 @@ from taskweaver.session.session import Session
 ## Import Environment Variables that will be helpful for executing functions
 from dotenv import load_dotenv
 
-load_dotenv()
 project_directory = os.getenv('PROJECT_DIRECTORY_NAME', 'project')
+
+load_dotenv(os.path.join(project_directory, ".env"))
 
 project_path = os.path.join(repo_path, project_directory)
 os.environ["PROJECT_DIRECTORY_PATH"] = project_path
